@@ -11,7 +11,6 @@ void setup()
   _gBTHC05.begin(9600);
 }
 
-
 void loop()
 {
   if(0 < _gBTHC05.available())
