@@ -1,23 +1,23 @@
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 
-SoftwareSerial _gBTHC08(PD6, PD7);
+SoftwareSerial _gBTHC05(PD6, PD7);
 String _gstrCommand = "";
 
 void setup()
 {
   Serial.begin(9600);
   Serial.println("Type AT command...");
-  _gBTHC08.begin(9600);
+  _gBTHC05.begin(9600);
 }
 
 void loop()
 {
-  if(0 < _gBTHC08.available())
+  if(0 < _gBTHC05.available())
   {
-    for(;0 < _gBTHC08.available();)
+    for(;0 < _gBTHC05.available();)
     {
-      char cChar = _gBTHC08.read();
+      char cChar = _gBTHC05.read();
 
       _gstrCommand += cChar;
     }
@@ -32,6 +32,6 @@ void loop()
   {
     char cChar = Serial.read();
 
-    _gBTHC08.write(cChar);
+    _gBTHC05.write(cChar);
   }
 }
